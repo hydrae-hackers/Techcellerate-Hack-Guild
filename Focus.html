@@ -1,0 +1,112 @@
+<!--Torin's-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<style>
+canvas {
+    border:1px solid #d3d3d3;
+    background-color: #f1f1f1;
+}
+</style>
+</head>
+<body onload="startGame()">
+<script>
+
+var myGamePiece;
+var timer;
+var MonitorW = window.innerWidth;
+var MonitorH = window.innerHeight;
+var timenum = 0
+var fortmatedTime = ""
+
+function startGame() {
+    myGamePiece = new component(500, 500, "rec.png", MonitorW/2-250, MonitorH/2-250, "image");
+    timer = new component("30px", "Consolas", "Black", MonitorW/2, MonitorH/2, "text")
+    myGameArea.start();
+}
+
+var myGameArea = {
+    canvas : document.createElement("canvas"),
+    start : function() {
+        this.canvas.width = MonitorW;
+        this.canvas.height = MonitorH;
+        this.context = this.canvas.getContext("2d");
+        document.body.insertBefore(this.canvas, document.body.childNodes[0]);
+        this.frameNo = 0;
+        this.interval = setInterval(updateGameArea, 20);
+        },
+    clear : function() {
+        this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    },
+    stop : function() {
+        clearInterval(this.interval);
+    }
+}
+
+function component(width, height, color, x, y, type) {
+    this.type = type;
+    if (type == "image") {
+        this.image = new Image();
+        this.image.src = color;
+    }
+    this.width = width;
+    this.height = height;
+    this.speedX = 0;
+    this.speedY = 0;    
+    this.x = x;
+    this.y = y;    
+    this.update = function() {
+        ctx = myGameArea.context;
+        if (type == "image") {
+            ctx.drawImage(this.image, 
+                this.x, 
+                this.y,
+                this.width, this.height);
+        } 
+        else {
+            if (type == "text") {
+                ctx.font = this.width + " " + this.height;
+                ctx.fillStyle = color;
+                ctx.fillText(this.text, this.x, this.y);
+            }
+            else {
+                ctx.fillStyle = color;
+                ctx.fillRect(this.x, this.y, this.width, this.height);
+            }
+            }
+        }
+    }
+function time(num) {
+    timenum = timenum*10 + num
+    hrs = Math.floor(timenum/3600);
+    min =  Math.floor((timenum % 3600)/60)
+    sec = (timenum % 3600) % 60
+    fortmatedTime = hrs + "," + min + "," + sec
+
+}
+
+function updateGameArea() {
+    myGameArea.clear();
+    myGamePiece.update();
+    timer.text=fortmatedTime;
+    timer.update();
+}
+</script>
+
+<div style="text-align:center">
+    <button onmousedown="time(0)" onmouseup="clearmove()" ontouchstart="move('right')">0</button>
+    <button onmousedown="time(1)" onmouseup="clearmove()" ontouchstart="move('up')">1</button>
+    <button onmousedown="time(2)" onmouseup="clearmove()" ontouchstart="move('left')">2</button>
+    <button onmousedown="time(3)" onmouseup="clearmove()" ontouchstart="move('right')">3</button>
+    <button onmousedown="time(4)" onmouseup="clearmove()" ontouchstart="move('down')">4</button>
+    <button onmousedown="time(5)" onmouseup="clearmove()" ontouchstart="move('up')">5</button>
+    <button onmousedown="time(6)" onmouseup="clearmove()" ontouchstart="move('left')">6</button>
+    <button onmousedown="time(7)" onmouseup="clearmove()" ontouchstart="move('right')">7</button>
+    <button onmousedown="time(8)" onmouseup="clearmove()" ontouchstart="move('right')">8</button>
+    <button onmousedown="time(9)" onmouseup="clearmove()" ontouchstart="move('right')">9</button>
+
+  </div>
+
+</body>
+</html>
