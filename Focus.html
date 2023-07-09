@@ -79,9 +79,9 @@ function component(width, height, color, x, y, type) {
     }
 function time(num) {
     timenum = timenum*10 + num
-    hrs = Math.floor(timenum/3600);
-    min =  Math.floor((timenum % 3600)/60)
-    sec = (timenum % 3600) % 60
+    hrs = Math.floor(timenum/10000)
+    min = Math.floor(timenum/100)-Math.floor(timenum/10000)*100
+    sec = timenum-Math.floor(timenum/100)
     fortmatedTime = hrs + "," + min + "," + sec
 
 }
