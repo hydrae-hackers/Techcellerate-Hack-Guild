@@ -19,10 +19,11 @@ var MonitorW = window.innerWidth;
 var MonitorH = window.innerHeight;
 var timenum = 0
 var fortmatedTime = ""
+var startswitch = 1
 
 function startGame() {
     myGamePiece = new component(500, 500, "rec.png", MonitorW/2-250, MonitorH/2-250, "image");
-    timer = new component("30px", "Consolas", "Black", MonitorW/2, MonitorH/2, "text")
+    timer = new component("30px", "Consolas", "Black", MonitorW/2-25, MonitorH/2, "text")
     myGameArea.start();
 }
 
@@ -82,9 +83,30 @@ function time(num) {
     hrs = Math.floor(timenum/10000)
     min = (Math.floor(timenum/100)) % 100
     sec = timenum % 100
-    fortmatedTime = hrs + ","+ min + "," + sec
-
+    fortmatedTime = hrs + "h,"+ min + "m," + sec + "s";
 }
+function finalizeTimer(timenum) {
+    if (sec >= 60) {
+        sec = sec - 60;
+        min = min + 1;
+        if (min >= 60) {
+        min = min - 60;
+        hrs = hrs + 1;
+        }
+    }
+    else {
+        if (min >= 60) {
+        min = min - 60;
+        hrs = hrs + 1;
+        }
+    }
+    fortmatedTime = hrs + "h,"+ min + "m," + sec + "s";
+    sec -= 1;
+    }
+
+    setInterval(function() {
+    finalizeTimer();
+    }, 1000);
 
 function updateGameArea() {
     myGameArea.clear();
@@ -95,17 +117,17 @@ function updateGameArea() {
 </script>
 
 <div style="text-align:center">
-    <button onmousedown="time(0)" onmouseup="clearmove()">0</button>
-    <button onmousedown="time(1)" onmouseup="clearmove()">1</button>
-    <button onmousedown="time(2)" onmouseup="clearmove()">2</button>
-    <button onmousedown="time(3)" onmouseup="clearmove()" ontouchstart="">3</button>
-    <button onmousedown="time(4)" onmouseup="clearmove()" ontouchstart="move('down')">4</button>
-    <button onmousedown="time(5)" onmouseup="clearmove()" ontouchstart="move('up')">5</button>
-    <button onmousedown="time(6)" onmouseup="clearmove()" ontouchstart="move('left')">6</button>
-    <button onmousedown="time(7)" onmouseup="clearmove()" ontouchstart="move('right')">7</button>
-    <button onmousedown="time(8)" onmouseup="clearmove()" ontouchstart="move('right')">8</button>
-    <button onmousedown="time(9)" onmouseup="clearmove()" ontouchstart="move('right')">9</button><br>
-    <button onmousedown="time(9)" onmouseup="clearmove()" ontouchstart="move('right')">9</button>
+    <button onmousedown="time(0)" >0</button>
+    <button onmousedown="time(1)" >1</button>
+    <button onmousedown="time(2)" >2</button>
+    <button onmousedown="time(3)" >3</button>
+    <button onmousedown="time(4)" >4</button>
+    <button onmousedown="time(5)" >5</button>
+    <button onmousedown="time(6)" >6</button>
+    <button onmousedown="time(7)" >7</button>
+    <button onmousedown="time(8)" >8</button>
+    <button onmousedown="time(9)" >9</button><br><br>
+    <button onmousedown="finalizeTimer(timenum)" >GO</button>
 
   </div>
 
