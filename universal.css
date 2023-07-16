@@ -5,3 +5,27 @@
     width: 50%;
     text-align: center;
 }
+
+.bg-bk {
+    background-color: #052F5F;
+    color: #DEF7E2;
+}
+
+.bg-blue {
+    background-color: #009FB7;
+    color: #DEF7E2;
+}
+.bg-light {
+    background-color: #DEF7E2;
+    color: #052F5F;
+}
+
+.bg-pink {
+    background-color: #EC5B84;
+    color: #DEF7E2;
+}
+
+.bg-yellow {
+    background-color: #FFBF00;
+    color: #052F5F;
+}
