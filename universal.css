@@ -29,3 +29,16 @@
     background-color: #FFBF00;
     color: #052F5F;
 }
+
+.guild {
+    font-size: 24;
+    text-decoration: none;
+}
+
+.guild-title:hover {
+    text-decoration: underline;
+}
+
+.card-img {
+    object-fit: cover;
+}

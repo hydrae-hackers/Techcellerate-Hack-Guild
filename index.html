@@ -19,12 +19,12 @@
             font-size: 100px;
         }
         #index-start {
-            background: #DEF7E2 url(assets/multi.jpg) no-repeat center bottom;  
+            background: #DEF7E2 url(assets/home/multi.jpg) no-repeat center bottom;  
             background-size: 100%;
         }
 
         #get-involved {
-            background: #052f5f url(assets/map.png) no-repeat center center;
+            background: #052f5f url(assets/home/map.png) no-repeat center center;
             background-size: cover;
         }
         .btn-join-inv {
@@ -63,6 +63,15 @@
             height: 100vh;
             margin: 0;
         }
+
+        .card-img {
+            width: 200px;
+            height: 200px;
+        }
+
+        #level-up {
+            background: #def7e2 url(assets/home/journey.jpg) no-repeat center center;
+        }
     </style>
 </head>
 <body>
@@ -84,37 +93,58 @@
             <div>
                 <a class="btn btn-join-inv w-25" href="login.html">Get Started</a>
                 <a class="btn btn-img" href="#">
-                    <img class="btn-icon" src="assets/appstore.svg" alt="download on the App Store">
+                    <img class="btn-icon" src="assets/home/appstore.svg" alt="download on the App Store">
                 </a>
                 <a class="btn btn-img" href="#">
-                    <img class="btn-icon" src="assets/googleplay.svg" alt="get it on Google Play">
+                    <img class="btn-icon" src="assets/home/googleplay.svg" alt="get it on Google Play">
                 </a>
             </div>
         </div>
     </div>
     <div class="row join d-flex align-items-center" id="get-involved">
-        <div class="col-8 bg-bk w-auto" >
+        <div class="col-8 bg-bk w-auto my-5">
             <h1>Get involved in your community</h1>
             <h3>Create and respond to quests requesting volunteers</h3>
         </div>
         </div>
     </div>
     <div class="row join d-flex align-items-center bg-blue">
-        <img class="col-4" src="" alt="a volunteer guild">
-        <div class="col-8">
+        <div class="col-6">
+            <a class="guild card rounded-3 m-3 d-flex flex-row justify-content-start p-0 bg-bk" href="javascript:alert('functionality coming soon')">
+                <img class="card-img" src="assets/park.jpg" alt="Guild Image">
+                <div class="card-body">
+                        <h5 class="guild-title">Park Cleaning & Rewilding</h5>
+                        <svg width='20' height='20' style="fill: #E83F6F;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>map-marker</title><path d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z" /></svg>
+                        <h6 style="display: inline-block" >Cityville, TX, USA</h6>
+                        <p class="guild-text">Let's maintain the park.</p>
+                        <button class="btn bg-blue">Join Now</button>
+                </div>
+            </a>
+            <a class="guild card rounded-3 m-3 d-flex flex-row justify-content-start p-0 bg-pink" href="javascript:alert('functionality coming soon')">
+                <img class="card-img" src="assets/chair.png" alt="Guild Image">
+                <div class="card-body">
+                        <h5 class="guild-title">Chairs for All</h5>
+                        <svg width='20' height='20' style="fill: #E83F6F;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>map-marker</title><path d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z" /></svg>
+                        <h6 style="display: inline-block" >Town, MI, USA</h6>
+                        <p class="guild-text">We make chairs</p>
+                        <button class="btn bg-bk">Join Now</button>
+                </div>
+            </a>
+        </div>
+        
+        <div class="col-6">
             <h1>Join volunteer guilds</h1>
             <h3>Connect with fellow volunteers to work on service projects</h3>
         </div>
     </div>
-    <div class="row join d-flex align-items-center bg-yellow">
-        <div class="col-8">
+    <div class="row join d-flex align-items-center bg-white" id="level-up">
+        <div class="col-4 bg-pink">
         <h1>Earn XP for your service hours</h1>
         <h3>Level up and observe your progress</h3>
     </div>
-        <img class="col-4" src="" alt="journey graphic">
     </div>
     <div class="row join d-flex align-items-center bg-pink">
-        <img class="col-4" src="clippy.png" alt="among us">
+        <img class="col-4" src="assets/creature.png" alt="among us">
         <div class="col-8">
             <h1>Raise your guildling</h1>
             <h3>Complete quests to feed your guildling and watch it grow</h3>
@@ -128,9 +158,9 @@
     <a class="btn btn-img" href="#">
         <image class="btn-icon" src="assets/googleplay.svg" alt="get it on Google Play">
     </a>
-    <a class="btn" href="">Terms of Service</a>
-    <a class="btn" href="">Privacy Policy</a>
-    <a class="btn" href="https://github.com/hydrae-hackers/Techcellerate-Hack-Guild">GitHub</a>
+    <a class="btn text-white" href="javascript:alert('coming soon')">Terms of Service</a>
+    <a class="btn text-white" href="javascript:alert('coming soon')">Privacy Policy</a>
+    <a class="btn text-white" href="https://github.com/hydrae-hackers/Techcellerate-Hack-Guild">GitHub</a>
 </footer>
 </body>
 </html>
