@@ -6,8 +6,73 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        @font-face {
+            font-family: "Righteous";
+            src: url("assets/Righteous-Regular.ttf") format("truetype");
+        }
+
+        #index-start h1 {
+            font-family: "Righteous", sans-serif;
+            font-size: 100px;
+        }
+        #index-start {
+            background: #DEF7E2 url(assets/home/multi.jpg) no-repeat center bottom;  
+            background-size: 100%;
+        }
+
+        #get-involved {
+            background: #052f5f url(assets/home/map.png) no-repeat center center;
+            background-size: cover;
+        }
+        .btn-join-inv {
+            border: none;
+            background-color: #052f5f;
+            color: #def7e2;
+            font-weight: bold;
+            height: 50px;
+            margin: 1px;
+        }
+
+        .btn-join-inv:hover, .btn-join-inv:focus {
+            background-color: #063c79;
+            box-shadow: 4px 4px #E83F6F;
+            color: #def7e2;
+            margin: 1px;
+        }
+
+        .btn-join-inv:active, .btn-join-inv:first-child:active {
+            background-color: #009bb3;
+            box-shadow: 6px 6px #E83F6F;
+            color: #def7e2;
+            margin: 1px;
+        }
+        .btn-img {
+            padding: 0;
+            border: none;
+            margin: 0;
+        }
+
+        .btn-img img {
+            height: 50px;
+        }
+
+        .join {
+            height: 100vh;
+            margin: 0;
+        }
+
+        .card-img {
+            width: 200px;
+            height: 200px;
+        }
+
+        #level-up {
+            background: #def7e2 url(assets/home/journey.jpg) no-repeat center center;
+        }
+    </style>
 </head>
-    <h1 class="text-center">Tasks</h1>
+
     <nav class="navbar navbar-brand navbar-toggler mx-auto">
         <a class="btn" href="index.html">Home</a>
         <a class="btn" href="dashboard.html">Dashboard</a>
@@ -18,29 +83,29 @@
         <a class="btn" href="shop.html">Shop</a>
         <a class="btn" href="tasks.html">Tasks</a>
     </nav>
-    
     <body>
-        <div class="container">
-            <!-- <div class="col-5"></div> -->
-            <input type="text" class="col-xxl mx-auto">
-            <table class="table table-striped col-xxl">
-                <tr>
-                    <th>Name</th>
-                    <th>Description</th>
-                    <th></th>
-                </tr>
-                <tr>
-                    <td>Task ASJDOAOSD</td>
-                    <td></td>
-                    <td class="">
-                        <input type="checkbox" class="btn-check col-10" id="btn-check-2-outlined" checked autocomplete="off">
-                        <label class="btn btn-outline-primary col-10" for="btn-check-2-outlined">Done</label><br>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Task ASJDOAOSD</td>
-                </tr>
-            </table>
+        <div class="row join d-flex align-items-top bg-blue">
+            <div class="col-12">
+                <a class="guild card rounded-3 m-3 d-flex flex-row justify-content-start p-0 bg-bk" href="javascript:alert('functionality coming soon')">
+                    <img class="card-img" src="assets/park.jpg" alt="Guild Image">
+                    <div class="card-body">
+                            <h5 class="guild-title fs-3">Park Cleaning & Rewilding</h5>
+                            <p class="my-5"></p>
+                            <svg width='20' height='20' style="fill: #E83F6F;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>map-marker</title><path d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z" /></svg>
+                            <h6 style="display: inline-block" >Cityville, TX, USA</h6>
+                            <p class="guild-text text-center position-absolute translate-middle">Let's maintain the park.</p>
+                    </div>
+                </a>
+                <a class="guild card rounded-3 m-3 d-flex flex-row justify-content-start p-0 bg-pink" href="javascript:alert('functionality coming soon')">
+                    <img class="card-img" src="assets/chair.png" alt="Guild Image">
+                    <div class="card-body">
+                            <h5 class="guild-title">Chairs for All</h5>
+                            <svg width='20' height='20' style="fill: #E83F6F;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>map-marker</title><path d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z" /></svg>
+                            <h6 style="display: inline-block" >Town, MI, USA</h6>
+                            <p class="guild-text">We make chairs</p>
+                    </div>
+                </a>
+            </div>
         </div>
     </body>
 </html>
