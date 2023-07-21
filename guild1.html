@@ -21,6 +21,46 @@
             align-items: center;
             color: white;
         }
+
+        #guild-msg {
+            position: relative;
+            top: 10%;
+            display: flex;
+            flex-direction: row;
+        }
+        #guild-pet {
+            width: 178px;
+        }
+
+        #guild-msg-bubble {
+            border-radius: 10px;
+            padding: 0 20px;
+        }
+        #guild-msg-bubble:before {
+            content: "";
+            width: 0;
+            height: 0;
+            position: absolute;
+            top: 50%;
+            left: 162px;
+            border-left: 10px solid transparent;
+            border-right: 10px solid #DEF7E2;
+            border-top: 10px solid #DEF7E2;
+            border-bottom: 10px solid transparent;
+        }
+        #bounties {
+            margin: auto;
+            width: 75%;
+        }
+        .bounty {
+            border: 1px solid black;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin: 10px;
+            padding: 10px;
+            border-radius: 10px;
+        }
     </style>
 </head>
 <body>
@@ -34,14 +74,36 @@
         <a class="btn" href="shop.html">Shop</a>
         <a class="btn" href="tasks.html">Tasks</a>
     </nav>
-    <div class="container-fluid">
-        <div class="guild-page-title bg-bk m-0">
+    <div class="container-fluid p-0">
+        <div class="guild-page-title w-100 bg-bk m-0">
             <div class="bg-bk center">
                 <h1>Park Cleaning & Rewilding</h1>
             <svg width='20' height='20' style="fill: #E83F6F;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>map-marker</title><path d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z" /></svg>
             <h6 style="display: inline-block" >Cityville, TX, USA</h6>
             </div>
-            
+
+            <div id="guild-msg">
+                <img id="guild-pet" src="assets/creature.png" alt="Guild Pet">
+                    <div id="guild-msg-bubble" class="bg-light">
+                        <h5 class="m-0">Clyde</h5>
+                        <h6 class="fst-italic">Guild Pet</h6>
+                        <p>Check out some of these bounties!</p>
+                    </div>    
+            </div>
+        </div>
+        <div id="bounties">
+            <div class="bounty">
+                <h6>Pick up litter</h6>
+                <h6>30 gelds</h6>
+            </div>
+            <div class="bounty">
+                <h6>Help pull invasive plants - July 29th</h6>
+                <h6>50 gelds</h6>
+            </div>
+            <div class="bounty">
+                <h6>Help plant native trees - July 30th</h6>
+                <h6>50 gelds</h6>
+            </div>
         </div>
     </div>
 </body>
