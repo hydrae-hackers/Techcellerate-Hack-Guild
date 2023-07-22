@@ -2,60 +2,80 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>-= Login =-</title>
+        <title>Login</title>
 
         <!-- TODO: add any css includes -->
+
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <link href="../Techcellerate-Hack-Guild/universal.css" rel="stylesheet">
+        <link rel="icon" type="image/x-icon" href="../Techcellerate-Hack-Guild/assets/icons8-community-48.png">
     </head>
-
+    <style>
+    #signin {
+    display: block;
+    width: 115px;
+    height: 40px;
+    background: #4e51ff;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    line-height: 25px;
+}
+    </style>
     <body>
-        <nav class="navbar navbar-brand navbar-toggler mx-auto">
-            <a class="btn" href="index.html">Home</a>
+        <nav class="navbar navbar-brand navbar-toggler mx-auto sticky-top bg-light">
+            <a href="index.html" class="navbar-brand"><img src="assets/icons8-community-48.png" alt="logo"></a>
             <a class="btn" href="dashboard.html">Dashboard</a>
             <a class="btn" href="focus.html">Focus</a>
-            <a class="btn" href="guilds.html">Guilds</a>
+            <a class="btn" href="guilds.html">My Guilds</a>
             <a class="btn" href="login.html">Login</a>
             <a class="btn" href="profile.html">Profile</a>
             <a class="btn" href="shop.html">Shop</a>
             <a class="btn" href="tasks.html">Tasks</a>
         </nav>
         <div class="container">
-            <form id="loginForm" class="form-signin" method="post">
-                <h2 class="form-signin-heading">Log In</h2>
+            <fieldset>
+            <br>
+                <h1 class="center">Log In</h1>
+            <form id="loginForm">
+                <br><br>
                 <div class="row">
+                    <div class="col-md-3"></div>
                     <div class="col-md-6">
-                        <input id="username_input" name="username" autofocus="on" type="text" autocomplete="off" class="input-block-level" placeholder="Username">
+                        
+                        <label id="username_input" class="center">Username:</label>
+                        <input id="username_input" class="center" name="username" autofocus="on" type="text" autocomplete="off" class="input-block-level" placeholder="Username">
+                        <br>
+                        <label id="password_input" class="center">Password:</label>
+                        <input id="password_input" class="center" name="password" type="password" autocomplete="off" class="input-block-level" placeholder="Password">
                     </div>
-                    <div class="col-md-6">
-                        <input id="password_input" name="password" type="password" autocomplete="off" class="input-block-level" placeholder="Password">
-                    </div>
-                    <div class="col-md-8" id="failed_holder"></div>
+                    <div class="col-md-3"></div>
                 </div>
                 <div class="row">
-                    <div class="col-md-8">
-                        <label class="checkbox">
-                            <input type="checkbox" value="remember-me"> Remember me
-                        </label>
+                    <br>
+                    <div class="col-md-5"></div>
+                    <div class="col-md-2">
+                        <br>
+                        <label class="checkbox" class="center">Remember me</label>
+                        <input type="checkbox" value="remember-me">
+                        <div class="col-md-5"></div>
                     </div>
                 </div>
+                <br>
                 <div class="row">
+                    <div class="col-md-3"></div>
                     <div class="col-md-6">
-                        <button class="btn btn-large btn-primary" type="submit">Sign in</button>
-                    </div>
-
+                    <a id="signin" href="https://hydrae-hackers.github.io/Techcellerate-Hack-Guild/dashboard.html" class="center">
+                        Sign In
+                    </a>
+                </div>
+                    <div class="col-md-3"></div>
                 </div>
             </form>
-        </div>
+        </fieldset>
+    </div>
     </body>
-    <script>
-        function getParameterByName(name) {
-            var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
-            return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
-        }
-        var form = document.getElementById('loginForm'),
-            redirect = getParameterByName('redirect');
-        form.setAttribute('action', location.origin + '/login' + redirect ? ('?redirect=' + encodeURIComponent(redirect)) : '');
-    </script>
-    <script src="/extlib/node_modules/webgme/src/client/lib/jquery/jquery-2.1.0.js"></script>
 </html>
