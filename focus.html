@@ -10,8 +10,7 @@
 <style>
 
 nav {
-  position: absolute;
-  top: -675px;
+  position: sticky;
   border: 3px solid green;
 }
 </style>
@@ -52,7 +51,7 @@ var myGameArea = {
         this.canvas.width = MonitorW;
         this.canvas.height = MonitorH-50;
         this.context = this.canvas.getContext("2d");
-        document.body.insertBefore(this.canvas, document.body.childNodes[0]);
+        document.body.appendChild(this.canvas, document.body.childNodes[0]);
         this.frameNo = 0;
         this.interval = setInterval(updateGameArea, 20);
         },
