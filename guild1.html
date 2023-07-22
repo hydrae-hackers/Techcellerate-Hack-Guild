@@ -8,7 +8,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="universal.css" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="icon" type="image/x-icon" href="../Techcellerate-Hack-Guild/assets/icons8-community-48.png">
     <style>
         .guild-page-title {
             background-image: url("assets/park.jpg");
@@ -54,7 +53,6 @@
             width: 75%;
         }
         .bounty {
-            border: 1px solid black;
             display: flex;
             flex-direction: row;
             justify-content: space-between;
@@ -62,11 +60,16 @@
             padding: 10px;
             border-radius: 10px;
         }
+
+        .bounty h6:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
     <nav class="navbar navbar-brand navbar-toggler mx-auto sticky-top bg-light">
-        <a href="index.html" class="navbar-brand"><img src="../Techcellerate-Hack-Guild/assets/icons8-community-48.png" alt="logo"></a>
+        <a href="index.html" class="navbar-brand"><img src="" alt="logo"></a>
         <a class="btn" href="dashboard.html">Dashboard</a>
         <a class="btn" href="focus.html">Focus</a>
         <a class="btn" href="guilds.html">Guilds</a>
@@ -93,17 +96,27 @@
             </div>
         </div>
         <div id="bounties">
-            <div class="bounty">
-                <h6>Pick up litter</h6>
-                <h6>30 gelds</h6>
+            
+            <div class="bounty bg-bk" tabindex="1">
+                <div>
+                    <h6>Pick up litter</h6>
+                    <p>30 gelds</p>
+                </div>
+                <button class="btn bg-bk" onclick="alert('coming soon')">Accept</button>
             </div>
-            <div class="bounty">
+            <div class="bounty bg-pink" tabindex="2">
+                <div>
                 <h6>Help pull invasive plants - July 29th</h6>
-                <h6>50 gelds</h6>
+                <p>50 gelds</p>
+                </div>
+                <button class="btn bg-pink" onclick="alert('coming soon')">Accept</button>
             </div>
-            <div class="bounty">
-                <h6>Help plant native trees - July 30th</h6>
-                <h6>50 gelds</h6>
+            <div class="bounty bg-yellow" tabindex="3">
+                <div>
+                    <h6>Help plant native trees - July 30th</h6>
+                    <p>50 gelds</p>
+                </div>
+                <button class="btn bg-yellow" onclick="alert('coming soon')">Accept</button>
             </div>
         </div>
     </div>
